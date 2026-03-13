@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montreal Art Club</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --red: #E8003D;
+      --black: #1d1d1f;
+      --grey: #6e6e73;
+      --light-grey: #f5f5f7;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 0 2rem;
+      height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav .brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 100px 2rem 80px;
+      background: var(--white);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--red);
+    }
+
+    .hero p {
+      margin-top: 1.25rem;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: var(--grey);
+      font-weight: 400;
+      max-width: 560px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 70px 2rem;
+    }
+
+    section + section {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    section p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--grey);
+    }
+
+    /* ── EVENT CARDS ── */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .event-card {
+      background: var(--light-grey);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .event-card.upcoming {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .event-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .event-card.upcoming .event-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--white);
+    }
+
+    .event-card:not(.upcoming) .event-badge {
+      background: rgba(0, 0, 0, 0.08);
+      color: var(--grey);
+    }
+
+    .event-info h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .event-card.upcoming .event-info h3 {
+      color: var(--white);
+    }
+
+    .event-card:not(.upcoming) .event-info h3 {
+      color: var(--black);
+    }
+
+    .event-info p {
+      font-size: 0.875rem;
+      margin-top: 0.2rem;
+      opacity: 0.75;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--grey);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="brand" href="#">Montreal Art Club</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Montreal<br>Art Club</h1>
+    <p>A community of artists, filmmakers, and creatives based in Montréal.</p>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Montreal Art Club is an independent collective dedicated to celebrating art, film,
+      and creative culture in Montréal. We bring together local artists and audiences
+      through curated events, screenings, and collaborative projects.
+    </p>
+  </section>
+
+  <section id="events">
+    <h2>Events</h2>
+    <div class="event-list">
+      <div class="event-card upcoming">
+        <span class="event-badge">Upcoming</span>
+        <div class="event-info">
+          <h3>Friends Film Festival</h3>
+          <p>2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="past-events">
+    <h2>Past Events</h2>
+    <div class="event-list">
+      <div class="event-card">
+        <span class="event-badge">Past</span>
+        <div class="event-info">
+          <h3>Friends Film Festival</h3>
+          <p>2025</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <span class="event-badge">Past</span>
+        <div class="event-info">
+          <h3>Friends Film Festival</h3>
+          <p>2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Montreal Art Club
+  </footer>
+
+</body>
+</html>
