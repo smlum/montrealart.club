@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montreal Art Club</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --red: #E8003D;
+      --black: #1d1d1f;
+      --grey: #555;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      padding: 1rem 0 0.75rem;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2rem;
+    }
+
+    nav .brand {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 1.5rem 0 1.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--red);
+    }
+
+    .hero p {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 1.75rem 0;
+      border-top: 1px solid #ddd;
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    section p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--grey);
+    }
+
+    /* ── EVENTS ── */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .event-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .event-row .event-name {
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .event-row .event-name.upcoming {
+      color: var(--red);
+    }
+
+    .event-row .event-year {
+      color: var(--grey);
+      font-size: 0.85rem;
+    }
+
+    .event-row .event-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--red);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.25rem 0;
+      font-size: 0.75rem;
+      color: #aaa;
+      border-top: 1px solid #ddd;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="brand" href="#">Montreal Art Club</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Montreal<br>Art Club</h1>
+    <p>A community of artists, filmmakers, and creatives based in Montréal.</p>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Montreal Art Club is an independent collective dedicated to celebrating art, film,
+      and creative culture in Montréal. We bring together local artists and audiences
+      through curated events, screenings, and collaborative projects.
+    </p>
+  </section>
+
+  <section id="events">
+    <h2>Events</h2>
+    <div class="event-list">
+      <div class="event-row">
+        <span class="event-tag">↑ upcoming</span>
+        <span class="event-name upcoming">Friends Film Festival</span>
+        <span class="event-year">2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="past-events">
+    <h2>Past Events</h2>
+    <div class="event-list">
+      <div class="event-row">
+        <span class="event-name">Friends Film Festival</span>
+        <span class="event-year">2025</span>
+      </div>
+      <div class="event-row">
+        <span class="event-name">Friends Film Festival</span>
+        <span class="event-year">2024</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Montreal Art Club
+  </footer>
+
+</body>
+</html>
