@@ -14,8 +14,7 @@
     :root {
       --red: #E8003D;
       --black: #1d1d1f;
-      --grey: #6e6e73;
-      --light-grey: #f5f5f7;
+      --grey: #555;
       --white: #ffffff;
     }
 
@@ -24,39 +23,32 @@
       background-color: var(--white);
       color: var(--black);
       -webkit-font-smoothing: antialiased;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
     }
 
     /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: saturate(180%) blur(20px);
-      background: rgba(255, 255, 255, 0.85);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 0 2rem;
-      height: 52px;
-      display: flex;
-      align-items: center;
+      padding: 1rem 0 0.75rem;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2rem;
     }
 
     nav .brand {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: var(--red);
-      letter-spacing: -0.01em;
       text-decoration: none;
     }
 
     /* ── HERO ── */
     .hero {
-      text-align: center;
-      padding: 100px 2rem 80px;
-      background: var(--white);
+      padding: 1.5rem 0 1.75rem;
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 9vw, 7rem);
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1;
@@ -64,110 +56,78 @@
     }
 
     .hero p {
-      margin-top: 1.25rem;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      margin-top: 0.75rem;
+      font-size: 1rem;
       color: var(--grey);
-      font-weight: 400;
-      max-width: 560px;
-      margin-inline: auto;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     /* ── SECTIONS ── */
     section {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 70px 2rem;
-    }
-
-    section + section {
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1.75rem 0;
+      border-top: 1px solid #ddd;
     }
 
     section h2 {
-      font-size: 2rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       color: var(--black);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
     }
 
     section p {
-      font-size: 1.05rem;
-      line-height: 1.75;
+      font-size: 0.95rem;
+      line-height: 1.6;
       color: var(--grey);
     }
 
-    /* ── EVENT CARDS ── */
+    /* ── EVENTS ── */
     .event-list {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      margin-top: 0.5rem;
+      gap: 0.5rem;
     }
 
-    .event-card {
-      background: var(--light-grey);
-      border-radius: 16px;
-      padding: 1.5rem 1.75rem;
+    .event-row {
       display: flex;
-      align-items: center;
-      gap: 1.25rem;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.95rem;
     }
 
-    .event-card.upcoming {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    .event-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .event-card.upcoming .event-badge {
-      background: rgba(255, 255, 255, 0.25);
-      color: var(--white);
-    }
-
-    .event-card:not(.upcoming) .event-badge {
-      background: rgba(0, 0, 0, 0.08);
-      color: var(--grey);
-    }
-
-    .event-info h3 {
-      font-size: 1.1rem;
+    .event-row .event-name {
       font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    .event-card.upcoming .event-info h3 {
-      color: var(--white);
-    }
-
-    .event-card:not(.upcoming) .event-info h3 {
       color: var(--black);
     }
 
-    .event-info p {
-      font-size: 0.875rem;
-      margin-top: 0.2rem;
-      opacity: 0.75;
+    .event-row .event-name.upcoming {
+      color: var(--red);
+    }
+
+    .event-row .event-year {
+      color: var(--grey);
+      font-size: 0.85rem;
+    }
+
+    .event-row .event-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--red);
     }
 
     /* ── FOOTER ── */
     footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.8rem;
-      color: var(--grey);
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1.25rem 0;
+      font-size: 0.75rem;
+      color: #aaa;
+      border-top: 1px solid #ddd;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
@@ -194,12 +154,10 @@
   <section id="events">
     <h2>Events</h2>
     <div class="event-list">
-      <div class="event-card upcoming">
-        <span class="event-badge">Upcoming</span>
-        <div class="event-info">
-          <h3>Friends Film Festival</h3>
-          <p>2026</p>
-        </div>
+      <div class="event-row">
+        <span class="event-tag">↑ upcoming</span>
+        <span class="event-name upcoming">Friends Film Festival</span>
+        <span class="event-year">2026</span>
       </div>
     </div>
   </section>
@@ -207,19 +165,13 @@
   <section id="past-events">
     <h2>Past Events</h2>
     <div class="event-list">
-      <div class="event-card">
-        <span class="event-badge">Past</span>
-        <div class="event-info">
-          <h3>Friends Film Festival</h3>
-          <p>2025</p>
-        </div>
+      <div class="event-row">
+        <span class="event-name">Friends Film Festival</span>
+        <span class="event-year">2025</span>
       </div>
-      <div class="event-card">
-        <span class="event-badge">Past</span>
-        <div class="event-info">
-          <h3>Friends Film Festival</h3>
-          <p>2024</p>
-        </div>
+      <div class="event-row">
+        <span class="event-name">Friends Film Festival</span>
+        <span class="event-year">2024</span>
       </div>
     </div>
   </section>
